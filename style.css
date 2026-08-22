@@ -1,0 +1,2836 @@
+/* =========================================================
+   LOOKSMAX CLICKER
+   YANDEX GAMES EDITION
+   FLASH CLICKER STYLE
+========================================================= */
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+
+html,
+body {
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #555,
+            #111
+        );
+
+    color:white;
+
+    user-select:none;
+
+    touch-action:
+        manipulation;
+
+}
+
+
+
+/* =========================
+   GAME ROOT
+========================= */
+
+
+.game {
+
+    width:100vw;
+
+    height:100vh;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+        260px
+        minmax(420px,650px)
+        330px;
+
+
+    gap:15px;
+
+
+    justify-content:center;
+
+
+    align-items:start;
+
+
+    padding:15px;
+
+}
+.main-game {
+    position:relative;
+}
+
+
+.music-button {
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:12px;
+
+
+    background:
+    linear-gradient(
+        #555,
+        #222
+    );
+
+
+    color:white;
+
+    font-weight:900;
+
+
+    border:
+    3px solid #111;
+
+
+    border-radius:8px;
+
+
+    cursor:pointer;
+
+
+    box-shadow:
+    3px 3px 0 #000;
+
+}
+
+
+.music-button:hover {
+
+    filter:brightness(1.2);
+
+}
+
+
+.music-button:active {
+
+    transform:translateY(3px);
+
+}
+
+
+
+.music-button:hover {
+
+
+    filter:brightness(1.3);
+
+
+}
+
+
+
+.music-button:active {
+
+
+    transform:translateY(3px);
+
+
+    box-shadow:
+
+    0 0 0 #000;
+
+
+}
+
+
+.blackpill {
+    display:flex;
+    justify-content:space-between;
+}
+
+
+
+/* =========================
+   COMMON PANELS
+========================= */
+
+
+.panel,
+.shop,
+.stat-box,
+.progress,
+.blackpill {
+
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #353535,
+            #151515
+        );
+
+
+    border:
+
+        3px solid #555;
+
+
+    border-radius:
+
+        8px;
+
+
+    box-shadow:
+
+        inset 0 0 0 2px #111,
+        5px 5px 0 #000;
+
+
+
+}
+
+
+
+/* =========================
+   LEFT PANEL
+========================= */
+
+
+.left-panel {
+
+
+    height:
+
+        fit-content;
+
+
+    align-self:start;
+
+
+}
+
+
+
+.ad-block {
+
+
+    padding:
+
+        15px;
+
+
+}
+
+
+
+.panel-title {
+
+
+    text-align:center;
+
+
+    font-family:
+        Arial Black,
+        Arial;
+
+
+    color:#ffcc00;
+
+
+    font-size:
+
+        20px;
+
+
+    margin-bottom:
+
+        15px;
+
+
+}
+
+
+
+
+
+.ad-banner {
+
+
+    background:
+
+        repeating-linear-gradient(
+            45deg,
+            #222,
+            #222 10px,
+            #292929 10px,
+            #292929 20px
+        );
+
+
+    border:
+
+        2px dashed #777;
+
+
+    padding:
+
+        15px;
+
+
+    text-align:center;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+.ad-bonus {
+
+
+    margin-top:
+
+        15px;
+
+
+    padding:
+
+        15px;
+
+
+    background:#111;
+
+
+    border:
+
+        2px solid #666;
+
+
+    text-align:center;
+
+
+}
+
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+
+button {
+
+
+    font-family:
+        Arial Black,
+        Arial;
+
+
+}
+
+
+.ad-block button {
+
+
+    width:100%;
+
+
+    margin-top:
+
+        15px;
+
+
+    padding:
+
+        12px;
+
+
+
+    cursor:pointer;
+
+
+
+    color:#111;
+
+
+    background:
+
+        linear-gradient(
+            #eee,
+            #888
+        );
+
+
+
+    border:
+
+        3px solid #111;
+
+
+    box-shadow:
+
+        3px 3px 0 #000;
+
+
+}
+
+
+
+.ad-block button:active {
+
+
+    transform:
+
+        translateY(3px);
+
+
+    box-shadow:
+
+        0 0 0 #000;
+
+
+}
+
+
+
+
+
+
+/* =========================
+   CENTER
+========================= */
+
+
+.main-game {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:12px;
+
+
+    min-width:0;
+
+
+}
+
+
+
+/* =========================
+   HUD
+========================= */
+
+
+.hud {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+        1fr
+        1fr;
+
+
+    gap:12px;
+
+
+}
+
+
+.stat-box {
+
+
+    padding:
+
+        12px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+.stat-box span {
+
+
+    color:#aaa;
+
+
+    font-size:
+
+        13px;
+
+
+}
+
+
+
+.stat-box strong {
+
+
+    display:block;
+
+
+    font-size:
+
+        42px;
+
+
+    text-shadow:
+
+        3px 3px #000;
+
+
+}
+
+
+
+.stat-box small {
+
+
+    color:#55ff55;
+
+
+}
+/* =========================================================
+   CHARACTER AREA
+========================================================= */
+
+
+.character-area {
+
+
+    height:
+
+        330px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+}
+
+
+
+
+.character-frame {
+
+
+    width:
+
+        330px;
+
+
+    height:
+
+        320px;
+
+
+
+    position:relative;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #252525,
+            #080808
+        );
+
+
+
+    border:
+
+        4px solid #111;
+
+
+
+    box-shadow:
+
+        inset 0 0 0 3px #555,
+        6px 6px 0 #000;
+
+
+
+    overflow:hidden;
+
+
+
+}
+
+
+
+
+.character-frame img {
+
+
+    max-width:
+
+        90%;
+
+
+    max-height:
+
+        90%;
+
+
+
+    object-fit:
+
+        contain;
+
+
+
+    filter:
+
+        drop-shadow(
+            5px 5px 0 #000
+        );
+
+
+
+    transition:
+
+        .15s;
+
+
+
+}
+
+
+
+
+.character-frame img:active {
+
+
+    transform:
+
+        scale(.92);
+
+
+
+}
+
+
+
+
+
+/* =========================
+   CURRENT MOGGER BADGE
+========================= */
+
+
+.badge {
+
+
+    position:absolute;
+
+
+    top:
+
+        10px;
+
+
+
+    left:
+
+        50%;
+
+
+
+    transform:
+
+        translateX(-50%)
+        rotate(-2deg);
+
+
+
+    padding:
+
+        7px 15px;
+
+
+
+    background:
+
+        linear-gradient(
+            #eee,
+            #999
+        );
+
+
+
+    color:#111;
+
+
+
+    font-family:
+
+        Arial Black,
+        Arial;
+
+
+
+    border:
+
+        3px solid #111;
+
+
+
+    box-shadow:
+
+        3px 3px 0 #000;
+
+
+
+    z-index:5;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+
+.progress {
+
+
+    padding:
+
+        12px;
+
+
+
+}
+
+
+
+.progress-text {
+
+
+    text-align:center;
+
+
+    margin-bottom:
+
+        8px;
+
+
+    font-weight:bold;
+
+
+    font-size:
+
+        16px;
+
+
+
+}
+
+
+
+
+.progress-bar {
+
+
+    width:100%;
+
+
+    height:
+
+        25px;
+
+
+
+    background:#111;
+
+
+
+    border:
+
+        3px solid #555;
+
+
+
+    overflow:hidden;
+
+
+
+}
+
+
+
+
+.progress-fill {
+
+
+    height:100%;
+
+
+
+    width:0;
+
+
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #777,
+            #eee
+        );
+
+
+
+    transition:
+
+        .25s;
+
+
+
+}
+
+
+
+
+
+/* =========================================================
+   MAIN CLICK BUTTON
+========================================================= */
+
+
+.main-click {
+
+
+    width:100%;
+
+
+    padding:
+
+        18px;
+
+
+
+    font-size:
+
+        24px;
+
+
+
+    color:white;
+
+
+
+    cursor:pointer;
+
+
+
+    background:
+
+        linear-gradient(
+            #666,
+            #222
+        );
+
+
+
+    border:
+
+        4px solid #111;
+
+
+
+    border-radius:
+
+        10px;
+
+
+
+    box-shadow:
+
+        0 7px 0 #000;
+
+
+
+    text-shadow:
+
+        2px 2px #000;
+
+
+
+    transition:
+
+        .1s;
+
+
+
+}
+
+
+
+
+.main-click:hover {
+
+
+    filter:
+
+        brightness(1.15);
+
+
+
+}
+
+
+
+.main-click:active {
+
+
+    transform:
+
+        translateY(6px);
+
+
+
+    box-shadow:
+
+        0 1px 0 #000;
+
+
+
+}
+
+
+
+
+/* эффект удара */
+
+
+.click-pop {
+
+
+    animation:
+
+        clickPop .15s;
+
+
+
+}
+
+
+
+@keyframes clickPop {
+
+
+    0%{
+
+        transform:
+            scale(1);
+
+    }
+
+
+    50%{
+
+        transform:
+            scale(.92);
+
+    }
+
+
+    100%{
+
+        transform:
+            scale(1);
+
+    }
+
+
+}
+
+
+
+
+
+
+/* =========================================================
+   BLACKPILL
+========================================================= */
+
+
+.blackpill {
+
+
+    padding:
+
+        15px;
+
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+
+    gap:
+
+        15px;
+
+
+
+}
+
+
+
+
+
+.blackpill h2 {
+
+
+    color:
+
+        #ff3333;
+
+
+
+    font-family:
+
+        Arial Black,
+        Arial;
+
+
+
+    text-shadow:
+
+        2px 2px #000;
+
+
+
+}
+
+
+
+
+.blackpill span {
+
+
+    color:#aaa;
+
+
+    font-size:
+
+        13px;
+
+
+
+}
+
+
+
+
+.blackpill p {
+
+
+    margin-top:
+
+        8px;
+
+
+    color:#ccc;
+
+
+    font-size:
+
+        13px;
+
+
+
+}
+
+
+
+
+.blackpill button {
+
+
+    min-width:
+
+        160px;
+
+
+    height:
+
+        45px;
+
+
+
+    background:#111;
+
+
+    color:#666;
+
+
+
+    border:
+
+        3px solid #333;
+
+
+
+    font-weight:bold;
+
+
+
+}
+
+
+
+
+.blackpill button:not(:disabled) {
+
+
+    background:
+
+        linear-gradient(
+            #900,
+            #400
+        );
+
+
+
+    color:white;
+
+
+    cursor:pointer;
+
+
+
+    border-color:#ff3333;
+
+
+
+    animation:
+
+        blackPulse 2s infinite;
+
+
+
+}
+
+
+
+@keyframes blackPulse {
+
+
+    0%{
+
+
+        box-shadow:
+            0 0 0 #f00;
+
+
+    }
+
+
+
+    50%{
+
+
+        box-shadow:
+            0 0 15px red;
+
+
+    }
+
+
+
+    100%{
+
+
+        box-shadow:
+            0 0 0 #f00;
+
+
+    }
+
+
+}
+/* =========================================================
+   SHOP
+   SOFTMAXING / HARDMAXING
+========================================================= */
+
+
+
+.right-panel {
+
+
+    height:
+
+        100%;
+
+
+    min-height:
+
+        0;
+
+
+
+}
+
+
+
+
+.shop {
+
+
+    height:
+
+        100%;
+
+
+    padding:
+
+        15px;
+
+
+
+    overflow-y:auto;
+
+
+
+    scrollbar-width:
+
+        thin;
+
+
+
+}
+
+
+
+
+
+.shop::-webkit-scrollbar {
+
+
+    width:
+
+        8px;
+
+
+}
+
+
+
+.shop::-webkit-scrollbar-thumb {
+
+
+    background:
+
+        #555;
+
+
+    border-radius:
+
+        5px;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   SHOP HEADER
+========================= */
+
+
+.shop-header {
+
+
+    text-align:center;
+
+
+
+    color:#ffcc00;
+
+
+
+    font-family:
+
+        Arial Black,
+        Arial;
+
+
+
+    font-size:
+
+        20px;
+
+
+
+    margin-bottom:
+
+        15px;
+
+
+
+    text-shadow:
+
+        2px 2px #000;
+
+
+
+}
+
+
+
+
+
+
+.shop-columns {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+
+    gap:
+
+        20px;
+
+
+
+}
+
+
+
+
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+
+.soft-title,
+.hard-title {
+
+
+    margin-bottom:
+
+        12px;
+
+
+
+    padding:
+
+        10px 12px;
+
+
+
+    font-family:
+
+        Arial Black,
+        Arial;
+
+
+
+    font-size:
+
+        18px;
+
+
+
+    text-align:center;
+
+
+
+    letter-spacing:
+
+        1px;
+
+
+
+    border:
+
+        2px solid #111;
+
+
+
+    box-shadow:
+
+        3px 3px 0 #000;
+
+
+
+    transform:
+
+        rotate(-1deg);
+
+
+
+}
+
+
+
+
+
+
+/* =========================
+   SOFTMAXING
+========================= */
+
+
+.soft-title {
+
+
+    background:
+
+        linear-gradient(
+            #7cff7c,
+            #38a838
+        );
+
+
+
+    color:
+
+        #062b06;
+
+
+
+}
+
+
+
+
+
+.shop-section:first-child .shop-item {
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #242424,
+            #171717
+        );
+
+
+
+}
+
+
+
+
+
+.shop-section:first-child .shop-item:hover {
+
+
+    border-color:
+
+        #5cff5c;
+
+
+
+    transform:
+
+        translateX(-4px)
+        rotate(-1deg);
+
+
+
+}
+
+
+
+
+
+
+/* =========================
+   HARDMAXING
+========================= */
+
+
+.hard-title {
+
+
+    background:
+
+        linear-gradient(
+            #ff6666,
+            #8b0000
+        );
+
+
+
+    color:white;
+
+
+
+    text-shadow:
+
+        2px 2px #000;
+
+
+
+    animation:
+
+        hardPulse 2s infinite;
+
+
+
+}
+
+
+
+@keyframes hardPulse {
+
+
+    0% {
+
+
+        box-shadow:
+
+            3px 3px 0 #000;
+
+
+    }
+
+
+    50% {
+
+
+        box-shadow:
+
+            3px 3px 0 #000,
+            0 0 15px rgba(255,0,0,.5);
+
+
+
+    }
+
+
+    100% {
+
+
+        box-shadow:
+
+            3px 3px 0 #000;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+.shop-section:nth-child(2) .shop-item {
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #251010,
+            #160606
+        );
+
+
+
+    border-color:
+
+        #631818;
+
+
+
+}
+
+
+
+
+
+.shop-section:nth-child(2) .shop-item:hover {
+
+
+    border-color:
+
+        #ff3333;
+
+
+
+    transform:
+
+        translateX(-4px)
+        rotate(1deg);
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   ITEM CARD
+========================================================= */
+
+
+.shop-item {
+
+
+    min-height:
+
+        70px;
+
+
+
+    padding:
+
+        10px;
+
+
+
+    margin-bottom:
+
+        10px;
+
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:space-between;
+
+
+
+    position:relative;
+
+
+
+    border:
+
+        2px solid #444;
+
+
+
+    border-radius:
+
+        6px;
+
+
+
+    transition:
+
+        .15s;
+
+
+
+    overflow:hidden;
+
+
+
+}
+
+
+
+
+/* цветная полоска слева */
+
+
+.shop-item:before {
+
+
+    content:"";
+
+
+
+    position:absolute;
+
+
+
+    left:0;
+
+
+    top:0;
+
+
+
+    width:
+
+        5px;
+
+
+
+    height:
+
+        100%;
+
+
+
+    background:
+
+        #777;
+
+
+
+}
+
+
+
+
+
+.shop-section:first-child .shop-item:before {
+
+
+    background:
+
+        #45d945;
+
+
+
+}
+
+
+
+
+
+.shop-section:nth-child(2) .shop-item:before {
+
+
+    background:
+
+        #ff3333;
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   TEXT
+========================= */
+
+
+.item-info {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+
+    gap:
+
+        5px;
+
+
+
+    padding-left:
+
+        10px;
+
+
+
+}
+
+
+
+
+.item-info strong {
+
+
+    font-size:
+
+        14px;
+
+
+
+    color:white;
+
+
+
+    text-shadow:
+
+        1px 1px #000;
+
+
+
+}
+
+
+
+
+.item-info span {
+
+
+    font-size:
+
+        12px;
+
+
+
+    color:#aaa;
+
+
+
+}
+
+
+
+
+
+/* =========================================================
+   BUY BUTTON
+========================================================= */
+
+
+.buy-button {
+
+
+    min-width:
+
+        80px;
+
+
+
+    height:
+
+        35px;
+
+
+
+    cursor:pointer;
+
+
+
+    color:white;
+
+
+
+    background:
+
+        linear-gradient(
+            #555,
+            #222
+        );
+
+
+
+    border:
+
+        2px solid #111;
+
+
+
+    border-radius:
+
+        5px;
+
+
+
+    box-shadow:
+
+        2px 2px 0 #000;
+
+
+
+    font-size:
+
+        13px;
+
+
+
+}
+
+
+
+
+.buy-button:hover:not(:disabled) {
+
+
+    background:
+
+        linear-gradient(
+            #777,
+            #333
+        );
+
+
+
+    transform:
+
+        translateY(-2px);
+
+
+
+}
+
+
+
+
+
+.buy-button:active:not(:disabled) {
+
+
+    transform:
+
+        translateY(2px);
+
+
+
+    box-shadow:
+
+        0 0 0 #000;
+
+
+
+}
+
+
+
+
+
+.buy-button:disabled {
+
+
+    opacity:
+
+        .45;
+
+
+
+    cursor:
+
+        not-allowed;
+
+
+
+}
+
+
+
+
+
+
+/* =========================================================
+   PURCHASE EFFECT
+========================================================= */
+
+
+.purchase-effect {
+
+
+    animation:
+
+        purchaseFlash .3s;
+
+
+
+}
+
+
+
+
+
+@keyframes purchaseFlash {
+
+
+    0% {
+
+
+        transform:
+
+            scale(1);
+
+
+    }
+
+
+
+    50% {
+
+
+        transform:
+
+            scale(1.08)
+            rotate(-2deg);
+
+
+
+    }
+
+
+
+    100% {
+
+
+        transform:
+
+            scale(1);
+
+
+
+    }
+
+
+}
+/* =========================================================
+   FLOATING TEXT
+========================================================= */
+
+
+.floating-bonus {
+
+
+    position:fixed;
+
+
+    pointer-events:none;
+
+
+
+    font-family:
+
+        Arial Black,
+        Arial;
+
+
+
+    font-size:
+
+        24px;
+
+
+
+    color:white;
+
+
+
+    text-shadow:
+
+        3px 3px #000;
+
+
+
+    z-index:
+
+        999;
+
+
+
+    animation:
+
+        floatUp .9s forwards;
+
+
+
+}
+
+
+
+
+@keyframes floatUp {
+
+
+    from {
+
+
+        opacity:
+
+            1;
+
+
+
+        transform:
+
+            translateY(0)
+            scale(1);
+
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:
+
+            0;
+
+
+
+        transform:
+
+            translateY(-80px)
+            scale(1.2);
+
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+   YANDEX GAMES DESKTOP
+========================================================= */
+
+
+@media
+(min-width:1101px){
+
+
+    .game {
+
+
+        max-width:
+
+            1280px;
+
+
+
+        margin:
+
+            auto;
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   SMALL DESKTOP / TABLET
+========================================================= */
+
+
+@media
+(max-width:1100px){
+
+
+
+body {
+
+
+    overflow:auto;
+
+
+
+}
+
+
+
+.game {
+
+
+    height:auto;
+
+
+    min-height:100vh;
+
+
+
+    grid-template-columns:
+
+        1fr;
+
+
+
+    max-width:
+
+        700px;
+
+
+
+    margin:
+
+        auto;
+
+
+
+}
+
+
+
+.left-panel {
+
+
+    order:
+
+        2;
+
+
+
+}
+
+
+
+.main-game {
+
+
+    order:
+
+        1;
+
+
+
+}
+
+
+
+.right-panel {
+
+
+    order:
+
+        3;
+
+
+
+    height:
+
+        600px;
+
+
+
+}
+
+
+
+.shop {
+
+
+    height:
+
+        600px;
+
+
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+
+@media
+(max-width:600px){
+
+
+
+.game {
+
+
+    padding:
+
+        8px;
+
+
+
+    gap:
+
+        10px;
+
+
+
+}
+
+
+
+
+
+.hud {
+
+
+    gap:
+
+        8px;
+
+
+
+}
+
+
+
+.stat-box {
+
+
+    padding:
+
+        8px;
+
+
+
+}
+
+
+
+
+.stat-box strong {
+
+
+    font-size:
+
+        30px;
+
+
+
+}
+
+
+
+
+.character-area {
+
+
+    height:
+
+        280px;
+
+
+
+}
+
+
+
+
+.character-frame {
+
+
+    width:
+
+        260px;
+
+
+
+    height:
+
+        260px;
+
+
+
+}
+
+
+
+
+.badge {
+
+
+    font-size:
+
+        12px;
+
+
+
+    padding:
+
+        5px 10px;
+
+
+
+}
+
+
+
+
+
+.main-click {
+
+
+    font-size:
+
+        19px;
+
+
+
+    padding:
+
+        15px;
+
+
+
+}
+
+
+
+
+
+.blackpill {
+
+
+    flex-direction:
+
+        column;
+
+
+
+    text-align:center;
+
+
+
+}
+
+
+
+
+
+.blackpill button {
+
+
+    width:
+
+        100%;
+
+
+
+}
+
+
+
+
+
+.right-panel {
+
+
+    height:
+
+        500px;
+
+
+
+}
+
+
+
+
+
+.shop {
+
+
+    height:
+
+        500px;
+
+
+
+}
+
+
+
+
+
+.shop-item {
+
+
+    min-height:
+
+        65px;
+
+
+
+}
+
+
+
+
+.item-info strong {
+
+
+    font-size:
+
+        13px;
+
+
+
+}
+
+
+
+
+.buy-button {
+
+
+    min-width:
+
+        65px;
+
+
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+
+@media
+(max-width:380px){
+
+
+
+.stat-box strong {
+
+
+    font-size:
+
+        26px;
+
+
+
+}
+
+
+
+
+.character-frame {
+
+
+    width:
+
+        220px;
+
+
+
+    height:
+
+        220px;
+
+
+
+}
+
+
+
+
+.shop-header {
+
+
+    font-size:
+
+        17px;
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+/* =========================================================
+   TOUCH FIX
+========================================================= */
+
+
+button {
+
+
+    -webkit-tap-highlight-color:
+
+        transparent;
+
+
+
+}
+
+
+
+
+
+button:focus {
+
+
+    outline:none;
+
+
+
+}
+/* =========================================================
+   HUD FIX
+========================================================= */
+
+
+.hud {
+
+    align-items:stretch;
+
+}
+
+
+
+.stat-box {
+
+    min-width:0;
+
+    overflow:hidden;
+
+}
+
+
+
+.stat-box strong {
+
+
+    font-size:clamp(
+        24px,
+        3vw,
+        42px
+    );
+
+
+    white-space:nowrap;
+
+
+    overflow:hidden;
+
+
+    text-overflow:ellipsis;
+
+
+}
+
+
+
+#looks {
+
+
+    letter-spacing:-1px;
+
+
+}
+
+
+
+#rank {
+
+
+    font-size:36px;
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    #rank {
+
+
+        font-size:28px;
+
+
+    }
+
+
+
+}
+/* =========================================================
+   AD BLOCK FONT FIX
+========================================================= */
+
+.ad-block,
+.ad-block *,
+.ad-block button,
+.ad-block span,
+.ad-block p {
+
+    font-family:
+        Arial Black,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+/* =========================================================
+   RESET BUTTON
+========================================================= */
+
+
+.reset-panel{
+
+    margin-top:20px;
+
+    padding:10px;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+
+
+#resetButton{
+
+
+    width:100%;
+
+    max-width:400px;
+
+    padding:14px;
+
+
+    background:#111;
+
+    color:#aaa;
+
+
+    border:1px solid #333;
+
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+
+    transition:.2s;
+
+
+}
+
+
+
+#resetButton:hover{
+
+
+    background:#222;
+
+    color:white;
+
+
+}

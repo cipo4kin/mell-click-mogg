@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<title>
+Looksmax Clicker
+</title>
+
+
+<link rel="stylesheet" href="style.css">
+
+
+<script src="https://yandex.ru/games/sdk/v2" defer></script>
+
+</head>
+
+
+<body>
+
+
+
+<div id="game" class="game">
+    
+
+
+<!-- ================= LEFT ================= -->
+
+
+<aside class="left-panel">
+
+
+<div class="panel ad-block">
+
+
+<div class="panel-title">
+📢 РЕКЛАМА
+</div>
+
+
+<div class="ad-banner">
+БЕСПЛАТНЫЙ БОНУС
+</div>
+
+
+<p>
+Посмотри рекламу и получи случайную награду
+</p>
+
+
+<div 
+class="ad-bonus"
+id="adBonus">
+
+🎁 Случайный бонус
+
+</div>
+
+
+
+<button id="adButton">
+
+▶ СМОТРЕТЬ
+
+</button>
+
+
+<span id="adStatus"></span>
+
+
+</div>
+
+
+</aside>
+
+
+
+
+
+<!-- ================= CENTER ================= -->
+
+
+<main class="main-game">
+
+
+
+<header class="hud">
+
+
+<div class="stat-box">
+
+
+<span>
+ОЧКИ МОГГА
+</span>
+
+
+<strong id="looks">
+0
+</strong>
+
+
+<small id="looksPerSecond">
++1 / сек
+</small>
+
+
+</div>
+
+
+
+
+
+<div class="stat-box">
+
+
+<span>
+РАНГ
+</span>
+
+
+<strong id="rank">
+SUB3
+</strong>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="character-area">
+
+
+<div class="character-frame">
+
+
+<div class="badge">
+CURRENT MOGGER
+</div>
+
+
+<img
+id="character"
+src="assets/characters/sub3.png"
+alt="character">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="progress">
+
+
+<div class="progress-text">
+
+
+<span id="currentLooks">
+0
+</span>
+
+
+/
+
+
+<span id="requiredLooks">
+100
+</span>
+
+
+</div>
+
+
+
+<div class="progress-bar">
+
+
+<div 
+id="progressFill"
+class="progress-fill">
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<button 
+id="clickButton"
+class="main-click">
+
+💀 ЗАБОУНСМЕШИТЬ
+
+</button>
+
+
+
+
+
+
+
+
+<section class="blackpill">
+
+
+<div>
+
+<h2>
+☠ BLACKPILL
+</h2>
+
+
+<span>
+ПЕРЕРОЖДЕНИЕ
+</span>
+
+
+<p id="blackpillDescription">
+
+Достигните TRUE MOGGER,
+чтобы открыть перерождение.
+
+</p>
+
+
+</div>
+
+
+
+<div class="blackpill-buttons">
+
+
+<button
+id="blackpillButton"
+disabled>
+
+ЗАБЛОКИРОВАНО
+
+</button>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+<button
+id="musicButton"
+class="music-button">
+🔊 МУЗЫКА
+</button>
+
+
+
+</main>
+
+
+
+
+
+
+
+
+<!-- ================= RIGHT ================= -->
+
+
+
+<!-- =================================================
+     ПРАВАЯ ПАНЕЛЬ - МАГАЗИН
+================================================== -->
+
+<aside class="right-panel">
+
+
+<div class="shop flash-box">
+
+
+<div class="shop-header">
+
+    🛒 МАГАЗИН МОГГИНГА
+
+</div>
+
+
+
+<div class="shop-columns">
+
+
+
+<div class="shop-columns">
+
+    <div class="shop-section">
+
+        <div class="section-title soft-title">
+            🟢 SOFTMAXING
+        </div>
+
+        <div class="shop-items" id="softShop">
+        </div>
+
+    </div>
+
+
+    <div class="shop-section">
+
+        <div class="section-title hard-title">
+            🔴 HARDMAXING
+        </div>
+
+        <div class="shop-items" id="hardShop">
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="reset-panel">
+
+<button id="resetButton">
+
+🔄 СБРОСИТЬ ПРОГРЕСС
+
+</button>
+
+</div>
+
+
+<div id="errorBox"></div>
+
+<script src="js/state.js" defer></script>
+
+<script src="js/data.js" defer></script>
+
+<script src="js/audio.js?v=2" defer></script>
+<script src="js/music.js" defer></script>
+
+<script src="js/ui.js" defer></script>
+
+<script src="js/rank.js" defer></script>
+
+<script src="js/bonuses.js" defer></script>
+
+<script src="js/save.js" defer></script>
+
+<script src="js/yandex.js" defer></script>
+
+<script src="js/game.js" defer></script>
+
+<script src="js/main.js" defer></script>
+
+
+</body>
+
+</html>
